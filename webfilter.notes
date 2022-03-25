@@ -1,0 +1,55 @@
+=====================
+=== WEB FILTERING ===
+=====================
+
+Web Filtering
+	Give the Web filtering modes. (2)
+		Flow-Based (Default, faster, less profiles)
+		Proxy-Based (Both flow/proxy profiles, slower)
+
+	What are the NGFW modes? (2)
+		Profile (Create Profile -> Add to Policy)
+		Policy (Apply controls within the policy)
+
+	What must be configured to allow Policy Based NGFW? (2)
+		SSL Inspection/Authentication Policy
+		Security Policy
+
+	Webfilter Actions. (5)
+		Allow
+		Block
+		Warning
+		Monitor
+		Authenticate
+
+	URL Filtering Actions. (4)
+		Allow
+		Block
+		Monitor
+		Exempt
+
+	What are webfiltering quotas?
+		Limits time user may access site within a category
+		Only applies to Monitor, Warning and Authenticate
+
+	Explain Web content filtering.
+		Filter webpages via content using regex
+		Requires Deep SSL Inspection
+		Actions; Exempt, Block
+
+	What is DNS filtering?
+		Filter before HTTP (And most other protocols)
+		Only inspect FDQN, not HTTP Headers
+		Analyses nameserver response
+
+	DNS Filtering Actions. (5)
+		Allow
+		Block
+		Monitor
+		Warning
+		Authenticate
+
+	What is the order for URL filtering? (3)
+		1. Static URL Filters
+		2. FortiGuard Categories
+		3. Advanced Filters 

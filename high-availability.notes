@@ -1,0 +1,59 @@
+=========================
+=== High Availability ===
+=========================
+
+High Availability
+	Give the styles of HA. (2)
+		Active-Passive (Better redundancy, Less throughput)
+		Active-Active (Better throughput, Less redundancy)
+		Note: Active-Active load balance sessions, making session failover impossible/ineffective
+
+	Requirements for a HA group to form
+		2-4 models (same config, hardware, firmware, license)
+		All ip addresses to be manually configured
+		Heartbeat interfaces
+
+	Give the order of metrics used to select the primary FortiGate
+		1. Greater monitored ports
+		2. Greater uptime
+		3. Greater priority
+		4. Greater Serial No.
+		Note: All Greater
+
+	How can you force a failover when overrides aren't set?
+		# diag sys ha reset-uptime
+
+	What does the override setting do?
+		Give priority precedence over uptime when selecting a primary FortiGate
+
+	What are the responsibilities of the Primary FortiGate? (3)
+		Send hello packets to check availability of Sercondaries
+		Synchronize configuration/Route Tables across secondaries
+		Active/Passive: session synchronisation or...
+		Active/Active: session distribution amoungst secondaries
+
+	What is FGCP responsible for? (4)
+		Discover other HA devices
+		Elect a primary unit
+		Synchronise config/sessions/routes
+		Detective device failures
+
+	What is the port for FGCP?
+		port no. 703
+
+	What occurs when the primary device fails and failover occurs?
+		The new primary sends a gratuitous ARP for the Cluster's VMAC
+
+	How do Heartbeat interfaces get their IP addresses?
+		Auto configures... 169.254.0.1, 169.254.0.2, ... 169.254.0.N
+
+	Explain how HA synchonization occurs? (3)
+		1. Full config sync occurs
+		2. Partial config sync per change
+		3. Peroidically check CRC Checksum to confirm configs match.
+		(if no match after 5 checks, refetch config.)
+
+	How does traffic look when HA loadbalancing? (Who gets what packet, where is it sent?)
+		Source will send packets to Primary (Because it has the VMAC)
+		Primary will send the packet to the Secondary for processing
+		Secondary will then forward to its destination

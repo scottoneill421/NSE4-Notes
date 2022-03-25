@@ -1,0 +1,43 @@
+===============
+=== LOGGING ===
+===============
+
+Logging
+	Give the steps of the logging work flow. (4)
+		1. Traffic hits fortigate
+		2. Fortigate applies all controls
+		3. Fortigate generates a log
+		4. Fortigate stores log (local or remote)
+
+	What are the log types? (3)
+		Traffic (forwarding/sniffing)
+		Event (Services/Processes on the Fortigate)
+		Security (Security profiles/controls)
+
+	How are logs stored on a FortiGate?
+		Stored in SQL Database on disk
+		75% of disk space available for logs
+		(Warnings after 75%, 90% and 95%)
+
+	What devices can a FortiGate remotely store logs on? (5)
+		FortiManager
+		FortiAnalyser
+		FortiCloud
+		FortiSIEM
+		Syslog Server
+
+	Give the remote Log upload times. (3)
+		Realtime
+		every 1 minute
+		every 5 minutes
+
+	What are the port/format of log transmission?
+		Port 514
+		via LZ4 compressed format
+
+	What are the two protocols for encypted log transmission
+		Over TCP
+		Using OFTPS
+
+	Log Rolling is...
+		compression of logfiles

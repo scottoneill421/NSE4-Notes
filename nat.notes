@@ -1,0 +1,53 @@
+===========
+=== NAT ===
+===========
+
+NAT
+	Give the versions/styles of NAT (4).
+		NAT - one to one
+		PAT - few to many (varies port numbers)
+		NAT46/64 - ipv4 -> ipv6 and vice versa
+		NAT66 - NAT for ipv6
+
+	NAT Configuration modes (2)
+		Firewall Policy mode (Per policy, ideal for simple environments)
+		Central NAT mode (Specific NAT policies, ideal for complex environments)
+
+	How do you configure Policy NAT
+		Within a policy using the outgoing interface
+		Within a policy using an IP address pool
+
+	What are the types of NAT pools? (4)
+		Overload - PAT
+		One-to-One - NAT
+		Fixed Port Range - Define an external IP range per an internal IP range
+		Port Block Allocation - define port blocks that can be assigned per user 
+					(limited ports per user)
+
+	What is required for a firewall policy to match VIPs
+		# set match-vip enable
+
+	Give the VIP types? (2)
+		static - default
+		load-balance - configured via CLI
+
+	What can be matched by a Central SNAT policy?
+		(The same as a regular policy)
+		Source/Destination IP Address
+		Source/Destination Interface
+		Port no. or Service
+
+	What is a session helper?
+		Used modify headers/content of certain packets (e.g. voip) to reflect NAT ip changes.
+
+	What does a session table store?
+		Source/Dest Interface
+		Source/Dest IP Address
+		Source/Dest NAT Address
+		Source/Dest Port
+		Services
+		TTL
+		TCP connection State
+
+	What does session TTL indicate?
+		How long until a session is closed after no traffic is receieved.

@@ -1,0 +1,59 @@
+====================
+=== CERTIFICATES ===
+====================
+
+Certificates
+	Give the three uses of certificates on a FortiGate.
+		Inspection (SSL/Certificate)
+		Privacy (SSL/TLS)
+		Authentication (VPN/2FA)
+
+	What field in a certificate is used to identify a host?
+		Subject Alternate Name (SAN)
+		Subject
+		Digital Signature
+
+	Give the steps when validating the certificate.
+		1. Check the CRL
+		2. Check CA is trusted
+		3. Check Validity Date
+		4. Verify the signature
+
+	Give the SSL Handshake Steps.
+		1. Host sends hello containing SSL version and supported algorithms
+		2. Server sends response with version, chosen algorithm and certificate
+		3. Host proceeds through validation steps
+		4. Host sends premaster secret encrypted with Server's pub. key
+		5. Webserver decrypts with priv. key
+		6. Both sides generate a master secret using the premaster secret
+		7. Both sides generate a session key using the master secret
+		8. Both sides generate a digest of all previous messages via session key
+		(This allows both parties to ensure no packets were modified during transit)
+
+	What is SSL Certificate inspection?
+		FortiGate checks the SNI, SAN or Subject of the Certificate to check if domain is trusted.
+
+	What configuration is required for a FortiGate to act as a CA?
+		FortiGate must be configured as a CA
+			cA=True
+			KeyUsage=KeyCertSign
+
+	Give the 3 Modes of response to untrusted certificates.
+		Allow - Allow, serve untrusted certificate
+		Block - Simply block the untrusted certificate
+		Ignore - Allow, serve a trusted certificate
+
+	Give to use cases for SSL Inspection excemptions
+		privacy laws (Banking/Health data)
+		Security protocols designed to stop MITM attacks (HPKP, HSTS)
+
+	How to obtain a Signed Certificate.
+		Generate a CSR
+		Submit to CA (Manual/SCEP)
+		Pending ... -> Valid
+
+	Give two ways to add a CRL to a FortiGate.
+		Manually upload to device
+		Download HTTP/LDAP/SCEP/Local PC
+
+

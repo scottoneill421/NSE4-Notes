@@ -1,0 +1,33 @@
+===========================
+=== Application Control ===
+===========================
+
+Application Control
+	What mode does Application Control scan in?
+		Flow Based (due to IPS engine)
+		However, can work in proxy mode
+		Flow based matching of byte stream
+
+	Why do issues arise with P2P?
+		Designed to bypass firewall controls (Random Ports, Pinholing, Changing Encryption, etc)
+
+	What are Application control Signatures?
+		Signatures used to match applications, supplied by FortiGuard
+
+	What can an Application Control profile filter by?
+		App overrides
+		Filter overrides
+		Categories
+
+	What are the Application control profile actions?
+		Allow
+		Block
+		Monitor
+		Quarantine
+
+	What are the steps inwhich FortiGate effects application control
+		1. Allow traffic until identified, add to session table with "may_dirty" bit
+		2. Once traffic's identified, either:
+			"dirty"
+			"app_valid"
+		3. If dirty, lookup/apply policy

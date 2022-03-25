@@ -1,0 +1,65 @@
+=====================================
+=== Intrustion Prevention Systems ===
+=====================================
+
+IPS
+	Give the 5 services handled by the IPS engine.
+		Application Control
+		Anti Virus
+		Web Filtering
+		Email Filtering
+		Data Loss Prevention
+
+	What is the role of protocol decoders?
+		Analyse the contents of the protocol
+		e.g.inspecting anomalies in HTTP Headers
+
+	What are the two IPS Database types?
+		Regular - Faster, no false positives, less threat coverage
+		Extended - Slower, false positives, greater threat coverage
+		(Note: Extended only avaiable for models with appropriate disk size.)
+
+	Give the IPS actions.
+		- Allow
+		- Block
+		- Monitor
+		- Quarantine
+		- Reset
+		- Default
+
+	Give the IPS Botnet Scanning options.
+		disable (no scanning)
+		block (block botnet ip traffic)
+		monitor (monitor, but allow botnet traffic)
+
+	What attacks do DoS Policies prevent against? (3)
+		TCP SYN Flood (exhaust session table)
+		ICMP Sweep (Layer 3 recon)
+		PortScan (Layer 4 recon)
+
+	Give the 4 DoS policy types. (4)
+		Flood
+		Sweep/Scan
+		Source
+		Destination
+
+	What is the role of Web Application Firewall?
+		Defend a webapp from known web exploits
+		Requires Proxy inspection to work
+
+	How do you configure WAF?
+		Configure a WAF profile with desired signatures
+		Apply the WAF Profile to the desired policy
+
+	Describe the FortiWeb.
+		A physical WAF appliance
+		FortiGates can leverage as a centralized WAF
+
+	What are the 3 `# diagnose test application ipsmonitor` options
+		2. enable/disable the IPS Engine
+		5. Bypass mode (failover)
+		99. Restart the IPS Engine
+
+	Explain IPS Failopen mode.
+		failopen turns active when memory buffer too full for further IPS scanning
+		If active, new packets are not scanned

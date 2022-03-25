@@ -1,0 +1,51 @@
+================================
+=== FORTIGATE SINGLE SIGN ON ===
+================================
+
+FSSO
+	What are the 2 modes of FSSO?
+		Agent (Agents installed on DCs)
+		Polling (Polling agent queries DCs)
+
+	Give the steps of DC agent Mode. (4)
+		1. User authenticates against DC
+		2. DC Agent notices, and forwards to polling agent
+		3. DC Polling agent forwards all login events to FortiGate
+		4. FortiGate allows access to resources
+
+	What are the options/methods polling agents use to query DCs? (3)
+		NetAPI - Queries session table in RAM
+		WinSecLog - Queries event logs for logins
+		WMI - Windows API that returns server details/state
+
+	Give the steps of DC Polling Mode. (4)
+		1. User authenticates against DC
+		2. Collector Agent periodically polls the DCs for logins
+		3. Collector Agent forwards known logins to FortiGate
+		4. FortiGate allows access to resources
+
+	Explain agentless polling mode.
+		The FortiGate is configured as an FSSO Collector agent itself
+
+	Give the steps of Agentless Polling Mode. (3)
+		1. User authenticates against the DC
+		2. FortiGate periodically polls DC for logins
+		3. FortiGate allows access to resources
+
+	What is NTLM?
+		A suite of microsoft Security Confidentiality/Integrity Authentication tools.
+
+	What is the usecase of NTLM?
+		When Collector does not have sufficient/stable access to the DC.
+
+	Give the steps of the NTLM Process. (5)
+		1. FortiGate receives traffic from unknown user
+		2. FortiGate sends challenge to user
+		3. User Authenticates
+		4. FortiGate tests users credentials against the Polling Agent
+		5. FortiGate grants access to resources
+
+	Give the 2 AD access modes.
+		Standard: Windows convention/no nested groups
+		Advanced: LDAP conventions/supports nested groups
+	

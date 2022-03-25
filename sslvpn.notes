@@ -1,0 +1,45 @@
+===============
+=== SSL VPN ===
+===============
+
+SSL-VPN
+	What are the SSL VPN Modes? (2)
+		Tunnel Mode (Uses FortiClient)
+		Web Mode (Uses Web Browser)
+
+	What are the steps of establishing a Webmode VPN. (3)
+		1. HTTP Connection to FortiGate ssl.vpn
+		2. User Authenticates
+		3. FortiGate serves quick connections + bookmarks
+
+	What are the steps to establish Tunnel Mode VPN. (4)
+		1. Connection between FortiClient and FortiGate
+		2. User Authenticates
+		3. Virtual adapter creates a tunnel
+		4. User accesses resources over SSL/TLS
+
+	What are the steps to configure SSL-VPN? (5)
+		1. Create Users/User Groups
+		2. Configure web portals
+		3. SSL/VPN settings
+		4. Policy to/from ssl.interface
+		5. (optional) SSL VPN traffic to internet
+
+	SSL VPN Realms are...
+		distinct web urls logins for different users/groups
+
+	SSL VPN Personal Bookmarks are...
+		Users canm configure their login bookmarks
+		Admin may create personal bookmarks using the CLI
+
+	Client Integrity checking is...
+		Gateway checks the clients security posture
+		e.g. AV Installed, patching, etc
+		can be configured via the CLI
+
+	What 2FA is available for VPN?
+		Configure Certificates on client device to identify self to FortiGate
+
+	Give the SSL VPN Hardware acceleration options. (2)
+		CP8/CP9 content processor may offload traffic to SSL-VPN bulk data engine
+		enable via the CLI per firewall policy

@@ -1,0 +1,32 @@
+==================
+=== ANTI VIRUS ===
+==================
+
+AntiVirus
+	What are the AntiVirus scan modes?
+		AV Scan: Basic scanning by exact signatures
+		Greyware Scan: Scans for PuPs, but not immediately risky
+		Heuristic Scan: Pattern match, looking for Zero Days, potential for false positives
+
+	How to configured the AntiVirus Databse type?
+		# set use-extreme-db <enable|disable>
+
+	What are the steps of Flow-Based inspection?
+		1. Client requests file
+		2. FortiGate caches file and forwards all but last packet to Client
+		3. FortiGate holds last packet until scanning is complete:
+			if virus; sent reset to terminate connection, block if file requested again
+			else; sent last packet of the file.
+
+	What are the steps of Proxy-Based inspection?
+		1. Client requests file
+		2. FortiGate buffers the entire file.
+		3. FortiGate scans the file, once scan is completed, forwarded to Client
+
+	What additional protocols are supported by Proxy-Mode?
+		MAPI
+		Content Disarm Reconstruction
+
+	What are the two modes of Hardware Acceleration for AntiVirus?
+		NTurbo -> UTM NGFW
+		CP8/CP9 -> Flow based pattern matching

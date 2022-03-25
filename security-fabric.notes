@@ -1,0 +1,28 @@
+=======================
+=== SECURITY FABRIC ===
+=======================
+
+Security Fabric
+	What is the purpose of the Security Fabric
+		Threats move laterally and grow in complexity
+		Network size/complexity increases complexity
+
+	Give the core devices required for the Fabric
+		2x Fortigates (Root/Downstream)
+		1x FortiAnalyzer
+
+	Give the device Identification modes. (2)
+		Agent (Uses FortiClient)
+		Agentless (HTTP, Headers, TCP Fingerprint)
+
+	Give the breach management options for automation Stitchs. (3)
+		if/then responses to security events
+		1. IP Ban of infected hosts
+		2. Quarantine host/metwork using FortiSwitch/FortiAP
+		3. Qurantine via FortiClient 
+
+	What are the roles of Fabric and External connectors respectively?
+		Fabric - Connect Fortinet products to the fabric
+		External - Connect 3rd Party devices to the fabric
+
+

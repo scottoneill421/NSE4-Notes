@@ -1,0 +1,48 @@
+======================
+=== AUTHENTICATION ===
+======================
+
+Authentication Objects
+	What are the main methods of Authentication?
+		Local Password (Users/Groups)
+		Remote Server (POP3/RADIUS/LDAP/TACACS+)
+		2FA (Email/SMS/FortiToken)
+
+	What are the 2 modes of Authentication?
+		Active: User purposefully authenticates (Local/POP3/2FA)
+		Passive: Authentication behind the scenes (FSSO/RSSO/NTLM)
+
+	What are commands to test ldap and radius servers
+		# diagnose test authserver ldap
+		# diagnose test authserver radius
+
+	What are the user types?
+		Firewall (stored on the firewall)
+		Guest (Common for wireless)
+		FSSO user group
+		RSSO user group
+
+	What are the authentication objects (used in policies).
+		Local Firewall accounts
+		Remote Server Accounts
+		PKI, Certificate types
+		FSSO Users
+
+	What protocols may be used for Authentication?
+		HTTP/HTTPS
+		FTP
+		Telnet/SSH
+
+Captive Portal
+	What are the captive portal timeout modes?
+		Hard (Since log in)
+		Idle (Since last packet)
+		New Session (Since last session)
+
+	Where is a captive portal enabled?
+		At the interface level
+	
+	What are captive portal excemptions?
+		Can restrict access to users/groups
+		exempt printers/fax/etc
+		Configure terms of service disclaimer	
